@@ -34,5 +34,5 @@ Antigravity không dùng catalog. Cài từng plugin từ địa chỉ repo, ví
 ## Liên hệ
 
 - Email: [finos@finolabs.io](mailto:finos@finolabs.io)
-- Lỗi bảo mật: xem [SECURITY.md](../SECURITY.md)
+- Lỗi bảo mật: xem [SECURITY.md](https://github.com/finolabs/.github/blob/main/SECURITY.md)
 - Giấy phép: các plugin ở trên dùng giấy phép MIT.
