@@ -37,7 +37,9 @@ jobs:
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: profile
-          path: profile
+          path: |
+            profile/assets
+            profile/data
           if-no-files-found: error
           retention-days: 3
 
@@ -61,14 +63,14 @@ jobs:
       - name: Open a pull request when the images changed
         run: |
           # The data file changes every run (as_of); only changed images are worth a PR.
-          if git diff --quiet -- profile/assets; then
+          if [ -z "$(git status --porcelain -- profile/assets)" ]; then
             echo "Images unchanged."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -C "$BRANCH"
-          git add profile
+          git add profile/assets profile/data
           git commit -m "chore: 🔄 refresh the profile activity images"
           git push --force origin "$BRANCH"
           if [ -z "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')" ]; then
