@@ -5,7 +5,7 @@
     "weeks": 17,
     "timezone": "UTC"
   },
-  "source": "GitHub REST API (commits and releases of public finolabs repositories, default branch) and finolabs/plugins catalog",
+  "source": "GitHub REST API (commits and releases inside the window, of public finolabs repositories, default branch) and finolabs/plugins catalog",
   "repos": [
     ".github",
     "agybird",

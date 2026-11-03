@@ -12,8 +12,8 @@ const css = readFileSync(join(root, "packages/tokens/theme.css"), "utf8");
 
 // Token names used by render.mjs. Anything missing makes this script fail.
 const NAMES = [
-  "ink-0", "ink-50", "ink-100", "ink-200", "ink-300", "ink-400", "ink-500", "ink-700", "ink-800", "ink-900", "ink-950",
-  "fn-mint-100", "fn-mint-200", "fn-mint-300", "fn-mint-400", "fn-mint-500", "fn-mint-600", "fn-mint-700", "fn-mint-800", "fn-mint-900",
+  "ink-0", "ink-50", "ink-900",
+  "fn-mint-200", "fn-mint-300", "fn-mint-400", "fn-mint-500", "fn-mint-600", "fn-mint-700", "fn-mint-800", "fn-mint-900",
   "background", "foreground", "muted", "muted-foreground", "border",
 ];
 
@@ -44,7 +44,7 @@ function resolve(map, name, seen = []) {
   return v;
 }
 
-const out = { source: { repo: "finolabs/design-system", file: "packages/tokens/theme.css", commit: "" }, light: {}, dark: {} };
+const out = { source: { repo: "FINOLABS design system", file: "packages/tokens/theme.css", commit: "" }, light: {}, dark: {} };
 out.source.commit = execFileSync("git", ["-C", root, "rev-parse", "HEAD"], { encoding: "utf8" }).trim();
 for (const n of NAMES) {
   out.light[n] = resolve(light, n);
