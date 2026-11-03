@@ -1,0 +1,91 @@
+{
+  "as_of": "2026-11-03",
+  "window": {
+    "start": "2026-07-12",
+    "weeks": 17,
+    "timezone": "UTC"
+  },
+  "source": "GitHub REST API (commits and releases inside the window, of public finolabs repositories, default branch) and finolabs/plugins catalog",
+  "repos": [
+    ".github",
+    "agybird",
+    "finolabs-vibecode",
+    "finolabs.github.io",
+    "markmap-skills",
+    "plugins",
+    "vietnamizer"
+  ],
+  "commits": {
+    "total": 457,
+    "days": {
+      "2026-07-29": 7,
+      "2026-07-30": 7,
+      "2026-08-01": 15,
+      "2026-08-02": 1,
+      "2026-08-03": 16,
+      "2026-08-23": 7,
+      "2026-09-09": 4,
+      "2026-09-26": 1,
+      "2026-09-27": 4,
+      "2026-09-28": 5,
+      "2026-10-02": 2,
+      "2026-10-03": 7,
+      "2026-10-04": 3,
+      "2026-10-05": 13,
+      "2026-10-10": 13,
+      "2026-10-13": 1,
+      "2026-10-16": 1,
+      "2026-10-18": 36,
+      "2026-10-19": 6,
+      "2026-10-20": 2,
+      "2026-10-22": 1,
+      "2026-10-23": 8,
+      "2026-10-25": 1,
+      "2026-10-26": 3,
+      "2026-10-28": 2,
+      "2026-10-31": 2,
+      "2026-11-01": 72,
+      "2026-11-02": 171,
+      "2026-11-03": 46
+    }
+  },
+  "releases": 28,
+  "plugins": [
+    {
+      "name": "finolabs-vibecode",
+      "repo": "finolabs-vibecode",
+      "description": "Engineering practice for AI coding agents: routing, delegation, review and security gates, verification, versioning and open source readiness.",
+      "release": {
+        "tag": "v0.1.5",
+        "published_at": "2026-11-03"
+      }
+    },
+    {
+      "name": "agybird",
+      "repo": "agybird",
+      "description": "Delegate code work, image generation or editing, and general tasks to the official Google Antigravity CLI through an existing Gemini subscription.",
+      "release": {
+        "tag": "v0.4.0",
+        "published_at": "2026-11-03"
+      }
+    },
+    {
+      "name": "vietnamizer",
+      "repo": "vietnamizer",
+      "description": "Biên tập bản nháp, bài viết, README và bản dịch tiếng Việt cho tự nhiên hơn, giữ nguyên ý, dữ kiện, thuật ngữ, code và giọng người viết.",
+      "release": {
+        "tag": "v0.13.3",
+        "published_at": "2026-10-31"
+      }
+    },
+    {
+      "name": "markmap-skills",
+      "repo": "markmap-skills",
+      "description": "Markmap mindmaps for AI agents with strict cognitive structuring, delivered as clean .mindmap.md files and standalone HTML pages.",
+      "release": {
+        "tag": "v0.2.0",
+        "published_at": "2026-11-03"
+      }
+    }
+  ]
+}
