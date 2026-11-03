@@ -12,4 +12,4 @@ Thank you for helping improve FINOLABS open source projects. This file applies t
 
 Changes reach the default branch through a pull request that passes the repository's checks. Maintainers review every pull request before it merges.
 
-By participating, you agree to follow the [Code of Conduct](CODE_OF_CONDUCT.md) and to license your contribution under the license the repository states.
+By participating, you agree to follow the [Code of Conduct](https://github.com/finolabs/.github/blob/main/CODE_OF_CONDUCT.md) and to license your contribution under the license the repository states.

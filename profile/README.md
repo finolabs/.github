@@ -29,7 +29,7 @@ codex plugin marketplace add finolabs/plugins
 codex plugin add finolabs-vibecode@finolabs
 ```
 
-Antigravity không dùng catalog. Cài từng plugin từ địa chỉ repo, ví dụ `agy plugin install https://github.com/finolabs/finolabs-vibecode`. Các plugin khác cài giống cách trên, chỉ đổi tên plugin. Chi tiết nằm trong [README của catalog](https://github.com/finolabs/plugins#readme).
+Antigravity không dùng catalog. Cài từng plugin từ địa chỉ repo, ví dụ `agy plugin install https://github.com/finolabs/finolabs-vibecode`. Plugin khác cài giống cách trên: đổi tên plugin ở lệnh Claude Code và Codex, đổi địa chỉ repo ở lệnh Antigravity. Chi tiết nằm trong [README của catalog](https://github.com/finolabs/plugins#readme).
 
 ## Liên hệ
 
