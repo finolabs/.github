@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-03",
+  "as_of": "2026-11-05",
   "window": {
     "start": "2026-07-12",
     "weeks": 17,
@@ -16,7 +16,7 @@
     "vietnamizer"
   ],
   "commits": {
-    "total": 457,
+    "total": 769,
     "days": {
       "2026-07-29": 7,
       "2026-07-30": 7,
@@ -46,18 +46,20 @@
       "2026-10-31": 2,
       "2026-11-01": 72,
       "2026-11-02": 171,
-      "2026-11-03": 46
+      "2026-11-03": 85,
+      "2026-11-04": 108,
+      "2026-11-05": 165
     }
   },
-  "releases": 28,
+  "releases": 31,
   "plugins": [
     {
       "name": "finolabs-vibecode",
       "repo": "finolabs-vibecode",
-      "description": "Engineering practice for AI coding agents: routing, delegation, review and security gates, verification, versioning and open source readiness.",
+      "description": "Engineering practice for AI coding agents: routing, delegation, review and security gates, verification, versioning, agent scans and mode settings.",
       "release": {
-        "tag": "v0.1.5",
-        "published_at": "2026-11-03"
+        "tag": "v0.1.8",
+        "published_at": "2026-11-05"
       }
     },
     {
