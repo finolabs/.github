@@ -8,7 +8,7 @@ FINOLABS is an investment and technology company. Built on AI-native and tech-dr
 
 ## Open source
 
-Plugins for AI coding agents. Every plugin lives in one shared catalog, [`finolabs/plugins`](https://github.com/finolabs/plugins), so Claude Code and Codex need a single marketplace source. The [developer hub](https://finolabs.github.io) lists them with install commands.
+Plugins for AI coding agents. Every plugin lives in one shared catalog, [`finolabs/plugins`](https://github.com/finolabs/plugins), so Claude Code and Codex need a single marketplace source. The [developer hub](https://finolabs.io) lists them with install commands.
 
 | Plugin | Description |
 | --- | --- |
