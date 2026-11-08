@@ -1,7 +1,7 @@
 {
-  "as_of": "2026-11-05",
+  "as_of": "2026-11-08",
   "window": {
-    "start": "2026-07-12",
+    "start": "2026-07-19",
     "weeks": 17,
     "timezone": "UTC"
   },
@@ -10,13 +10,12 @@
     ".github",
     "agybird",
     "finolabs-vibecode",
-    "finolabs.github.io",
     "markmap-skills",
     "plugins",
     "vietnamizer"
   ],
   "commits": {
-    "total": 769,
+    "total": 1155,
     "days": {
       "2026-07-29": 7,
       "2026-07-30": 7,
@@ -46,20 +45,23 @@
       "2026-10-31": 2,
       "2026-11-01": 72,
       "2026-11-02": 171,
-      "2026-11-03": 85,
+      "2026-11-03": 77,
       "2026-11-04": 108,
-      "2026-11-05": 165
+      "2026-11-05": 186,
+      "2026-11-06": 206,
+      "2026-11-07": 159,
+      "2026-11-08": 8
     }
   },
-  "releases": 31,
+  "releases": 34,
   "plugins": [
     {
       "name": "finolabs-vibecode",
       "repo": "finolabs-vibecode",
-      "description": "Engineering practice for AI coding agents: routing, delegation, review and security gates, verification, versioning, agent scans and mode settings.",
+      "description": "17 skills and 3 agents (fnl-reviewer, fnl-security-reviewer, fnl-navigator) for review routing, verification, setup, run hygiene and quota on demand.",
       "release": {
-        "tag": "v0.1.8",
-        "published_at": "2026-11-05"
+        "tag": "v0.2.0",
+        "published_at": "2026-11-08"
       }
     },
     {
