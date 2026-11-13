@@ -15,7 +15,7 @@ Plugins for AI coding agents. Every coding-agent plugin lives in one shared cata
 | [finolabs-vibecode](https://github.com/finolabs/finolabs-vibecode) | 25 skills and 3 agents (fnl-reviewer, fnl-security-reviewer, fnl-navigator) for review routing, verification, setup, run hygiene and quota on demand. |
 | [agybird](https://github.com/finolabs/agybird) | Delegate code work, image generation or editing, and general tasks to the official Google Antigravity CLI through an existing Gemini subscription. |
 | [vietnamizer](https://github.com/finolabs/vietnamizer) | Biên tập bản nháp, bài viết, README và bản dịch tiếng Việt cho tự nhiên hơn, giữ nguyên ý, dữ kiện, thuật ngữ, code và giọng người viết. |
-| [markmap-skills](https://github.com/finolabs/markmap-skills) | Markmap mindmaps for AI agents with strict cognitive structuring, delivered as clean .mindmap.md files and standalone HTML pages. |
+| [markmap-skills](https://github.com/finolabs/markmap-skills) | Turn notes and documents into editable Markdown and interactive Markmap mindmaps, for Claude Code, Codex and Antigravity. No background daemon. |
 
 [vibebiz](https://github.com/finolabs/vibebiz) sits outside the catalog: a Claude Cowork plugin that works as a product owner for retail leaders, turning a vague idea into a board deck and a tech PRD with a Spec Kit-compatible requirement file. Install it from its [latest release](https://github.com/finolabs/vibebiz/releases/latest) through Cowork's Settings › Plugins › Upload plugin. It is source-available, not MIT: free for noncommercial use under PolyForm Noncommercial 1.0.0, with a [commercial license](https://github.com/finolabs/vibebiz/blob/main/COMMERCIAL-LICENSE.md) for business use.
 
