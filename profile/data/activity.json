@@ -16,7 +16,7 @@
     "vietnamizer"
   ],
   "commits": {
-    "total": 2064,
+    "total": 2109,
     "days": {
       "2026-07-29": 7,
       "2026-07-30": 7,
@@ -56,10 +56,10 @@
       "2026-11-10": 75,
       "2026-11-11": 138,
       "2026-11-12": 354,
-      "2026-11-13": 67
+      "2026-11-13": 112
     }
   },
-  "releases": 46,
+  "releases": 47,
   "plugins": [
     {
       "name": "finolabs-vibecode",
@@ -84,8 +84,8 @@
       "repo": "vietnamizer",
       "description": "Biên tập bản nháp, bài viết, README và bản dịch tiếng Việt cho tự nhiên hơn, giữ nguyên ý, dữ kiện, thuật ngữ, code và giọng người viết.",
       "release": {
-        "tag": "v0.13.4",
-        "published_at": "2026-11-08"
+        "tag": "v0.14.0",
+        "published_at": "2026-11-13"
       }
     },
     {
