@@ -4,6 +4,8 @@
   <img src="assets/banner-light.png" alt="FINOLABS. Your avatar, at work in the Agentic Universe. Finos, the AI avatar of finolabs.io, at the centre of an orbit of FINOLABS plugins: vibecode, vibebiz, vietnamizer and markmap-skills." width="1280">
 </picture>
 
+**Real expertise, agent-ready.**
+
 FINOLABS builds Agent Skills and AI agents that bring a real person's expertise to Claude Code, Codex and Antigravity, so your avatar works the way you would. Everything below is MIT except vibebiz, which is source-available.
 
 **[finolabs.io](https://finolabs.io)** · **[Plugin catalog](https://github.com/finolabs/plugins)** · **[Security policy](https://github.com/finolabs/.github/blob/main/SECURITY.md)**
