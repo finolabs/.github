@@ -4,7 +4,7 @@ Generates the images on the organization profile (`profile/README.md`).
 
 | Output | Source of the content |
 | --- | --- |
-| `profile/assets/banner-{light,dark}.png` | Static copy, the FINO mark and wordmark from the FINOLABS design system (vendored in `vendor/`), and background line art generated with Google Antigravity (`vendor/generated/`, see its `SOURCE.md`). |
+| `profile/assets/banner-{light,dark}.png` | The finolabs.io hero copy (H1 and lead line), the wordmark and the Finos `idle` state from the FINOLABS design system (vendored in `vendor/`), the product icons from each repository's `assets/icon.svg`, and the host names as text chips. Finos always carries the fixed AI line. |
 | `profile/assets/activity-{light,dark}.png` | `profile/data/activity.json`, written by `fetch-activity.mjs`. |
 
 ## Data

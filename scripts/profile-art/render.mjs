@@ -12,11 +12,11 @@ const here = dirname(fileURLToPath(import.meta.url));
 const out = resolve(here, "../../profile/assets");
 const tokens = JSON.parse(readFileSync(join(here, "tokens.json"), "utf8"));
 const data = JSON.parse(readFileSync(resolve(here, "../../profile/data/activity.json"), "utf8"));
-const markUri = `data:image/png;base64,${readFileSync(join(here, "vendor/fino-mark.png")).toString("base64")}`;
+// Finos in its idle state, from the design system's state set; currentColor is the body.
+const finos = (color) => `data:image/svg+xml;base64,${Buffer.from(readFileSync(join(here, "vendor/finos/idle.svg"), "utf8").replace(/ color="#[0-9A-Fa-f]{6}"/, ` color="${color}"`)).toString("base64")}`;
 const wordmark = readFileSync(join(here, "vendor/fino-wordmark.svg"), "utf8").replace(/<title>.*?<\/title>/s, "").replace(/ width="360" height="80"/, "");
 
 const esc = (v) => String(v).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-const art = (theme) => `data:image/jpeg;base64,${readFileSync(join(here, `vendor/generated/banner-art-${theme}.jpg`)).toString("base64")}`;
 
 const chrome = [process.env.CHROME_PATH, "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", "google-chrome", "chromium"]
   .filter(Boolean).find((c) => c.includes("/") ? existsSync(c) : true);
@@ -46,21 +46,58 @@ body{background:var(--surface);color:var(--foreground);font-family:"Space Grotes
 svg.icon{width:36px;height:36px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
 `;
 
+// Product icons from each repository's assets/icon.svg (agybird is not promoted, so not shown).
+const ICONS = {
+  vibecode: '<path d="M30 36 L10 64 L30 92 M98 36 L118 64 L98 92" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><rect x="36" y="54" width="20" height="20" rx="4" fill="currentColor"/><path d="M72 64 H92" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>',
+  vibebiz: '<path d="M36 16 V100" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/><path d="M36 74 A28 28 0 1 1 64 102 H36" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M84 94 L104 112" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><circle cx="64" cy="74" r="6" fill="currentColor"/>',
+  vietnamizer: '<path d="M47 28 Q64 45 81 28" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><ellipse cx="61" cy="75" rx="23" ry="25" fill="none" stroke="currentColor" stroke-width="10"/><path d="M84 50 V100" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>',
+  markmap: '<circle cx="40" cy="64" r="11" fill="none" stroke="currentColor" stroke-width="9"/><path d="M51 64 C72 64 72 34 100 34 M51 64 H100 M51 64 C72 64 72 94 100 94" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>',
+};
+// The hosts orbit as plain name chips, not their owners' logos.
+const HOSTS = ["Claude Code", "Codex", "Google Antigravity", "Claude Cowork"];
+
+// Banner copy follows the approved finolabs.io hero (16/11/2026): Finos at the centre of an
+// orbit, products on the inner ring, hosts on the outer ring, the fixed AI line under Finos.
 function banner(theme) {
+  const CX = 1010, CY = 220, R_ICON = 150, R_HOST = 205;
+  const at = (r, deg) => [CX + r * Math.cos((deg * Math.PI) / 180), CY + r * Math.sin((deg * Math.PI) / 180)];
+  const icons = Object.values(ICONS).map((svg, i) => {
+    const [x, y] = at(R_ICON, [180, -135, -45, 0][i]);
+    return `<div class="orb" style="left:${x - 28}px;top:${y - 28}px"><svg viewBox="0 0 128 128">${svg}</svg></div>`;
+  }).join("");
+  const hosts = HOSTS.map((h, i) => {
+    const [x, y] = at(R_HOST, [-165, -15, 135, 45][i]);
+    return `<span class="host" style="left:${x}px;top:${y}px">${esc(h)}</span>`;
+  }).join("");
+  const ring = (r) => `<div class="ring" style="left:${CX - r}px;top:${CY - r}px;width:${2 * r}px;height:${2 * r}px"></div>`;
   return `${BASE(theme)}
 body{width:1280px;height:440px;position:relative}
-.art{position:absolute;inset:0;background:url("${art(theme)}") right center/cover no-repeat;mix-blend-mode:${theme === "light" ? "multiply" : "screen"};
-  -webkit-mask-image:linear-gradient(90deg,transparent 15%,#000 55%);mask-image:linear-gradient(90deg,transparent 15%,#000 55%)}
-.wm{position:absolute;left:72px;top:52px;color:var(--foreground)} .wm svg{height:50px;width:225px;display:block}
-h1{position:absolute;left:72px;top:128px;font-size:108px;line-height:1}
-p{position:absolute;left:72px;top:368px;font-size:32px;font-weight:500;color:var(--muted-foreground)}
-.mark{position:absolute;right:92px;top:90px;width:260px;height:260px;border-radius:24px}
+.wm{position:absolute;left:72px;top:48px;color:var(--foreground)} .wm svg{height:34px;width:153px;display:block}
+.lead{position:absolute;left:72px;top:118px;font-size:40px;font-weight:500;letter-spacing:-.02em}
+.iri{position:absolute;left:72px;top:160px;font-size:78px;font-weight:700;line-height:1;letter-spacing:-.045em;padding-bottom:.08em;white-space:nowrap;
+  background:linear-gradient(92deg,var(--fn-teal-300) 0%,var(--fn-mint-300) 22%,var(--fn-violet-400) 48%,var(--fn-violet-600) 68%,var(--fn-violet-400) 84%,var(--fn-mint-300) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+p{position:absolute;left:72px;top:272px;width:600px;font-size:20px;line-height:1.45;color:var(--muted-foreground)}
+.glow{position:absolute;left:${CX - 120}px;top:${CY - 120}px;width:240px;height:240px;border-radius:50%;filter:blur(64px);opacity:${theme === "light" ? ".35" : ".45"};
+  background:conic-gradient(from 220deg,var(--fn-mint-300),var(--fn-teal-300),var(--fn-violet-600),var(--fn-violet-400),var(--fn-mint-300))}
+.ring{position:absolute;border-radius:50%;border:1.5px solid var(--border)}
+.finos{position:absolute;left:${CX - 75}px;top:${CY - 80}px;width:150px;height:150px}
+.ai{position:absolute;left:${CX}px;top:${CY + 66}px;transform:translateX(-50%);white-space:nowrap;font:500 14px "JetBrains Mono",monospace;color:var(--foreground);
+  padding:6px 12px;border-radius:999px;border:1px solid var(--border);background:var(--${theme === "light" ? "ink-0" : "ink-900"})}
+.orb{position:absolute;width:56px;height:56px;border-radius:16px;display:grid;place-items:center;color:var(--fn-violet-${theme === "light" ? "600" : "400"});border:1px solid var(--border);background:var(--${theme === "light" ? "ink-0" : "ink-900"})}
+.orb svg{width:32px;height:32px}
+.host{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;font:500 14px "JetBrains Mono",monospace;color:var(--muted-foreground);
+  padding:5px 12px;border-radius:999px;border:1px solid var(--border);background:var(--surface)}
 .rule{position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--border)}
-</style><div class="art"></div>
+</style>
 <div class="wm">${wordmark}</div>
-<h1 class="display">AI-native.<br>Tech-driven.</h1>
-<p>Open source plugins for AI coding agents.</p>
-<img class="mark" src="${markUri}" alt="">
+<div class="lead">Your avatar, at work in the</div>
+<div class="iri">Agentic Universe.</div>
+<p>We build Agent Skills, MCP servers and AI agents that bring a real person's expertise to Claude Code, Codex and Antigravity, so your avatar works the way you would.</p>
+<div class="glow"></div>${ring(82)}${ring(R_ICON)}${ring(R_HOST)}
+<img class="finos" src="${finos(tokens[theme].foreground)}" alt="">
+<span class="ai">I'm Finos, the AI avatar of finolabs.io</span>
+${icons}${hosts}
 <div class="rule"></div>`;
 }
 
