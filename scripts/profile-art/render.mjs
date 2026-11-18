@@ -81,6 +81,7 @@ function activity(theme) {
     : ["muted", "fn-mint-900", "fn-mint-700", "fn-mint-500", "fn-mint-300"];
   const asOf = new Date(`${data.as_of}T00:00:00Z`);
   let cells = "", months = "", lastMonth = -1;
+  const monthAt = [];
   for (let w = 0; w < data.window.weeks; w++) {
     for (let d = 0; d < 7; d++) {
       const date = new Date(start); date.setUTCDate(start.getUTCDate() + w * 7 + d);
@@ -90,7 +91,12 @@ function activity(theme) {
       cells += `<div class="c" style="left:${w * STEP}px;top:${d * STEP}px;background:var(--${ramp[level(n)]})"></div>`;
     }
     const m = new Date(start.getTime() + w * 7 * 864e5).getUTCMonth();
-    if (m !== lastMonth) { months += `<span style="left:${w * STEP}px">${MONTHS[m]}</span>`; lastMonth = m; }
+    if (m !== lastMonth) { monthAt.push([w, m]); lastMonth = m; }
+  }
+  // A month that starts too close to the previous label replaces it, so labels never touch.
+  for (const [i, [w, m]] of monthAt.entries()) {
+    if (i + 1 < monthAt.length && (monthAt[i + 1][0] - w) * STEP < 72) continue;
+    months += `<span style="left:${w * STEP}px">${MONTHS[m]}</span>`;
   }
   const gridW = data.window.weeks * STEP - GAP, gridH = 7 * STEP - GAP;
   const legend = ramp.map((r) => `<i style="background:var(--${r})"></i>`).join("");
@@ -100,6 +106,12 @@ function activity(theme) {
     pkg: '<path d="m7.5 4.27 9 5.15M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/>',
   };
   const stat = (ic, value, label) => `<div class="stat"><svg class="icon" viewBox="0 0 24 24">${icon[ic]}</svg><b class="display">${value}</b><span class="eyebrow">${label}</span></div>`;
+  // One row of tiles, one column per plugin. The longest name sets the name size
+  // (JetBrains Mono advances 0.6em), so every name fits on one line.
+  const cols = data.plugins.length, TILE_PAD = 20;
+  const nameRoom = (1280 - 2 * 72 - 20 * (cols - 1)) / cols - 2 * TILE_PAD - 4;
+  const nameSize = Math.min(20, Math.floor(nameRoom / (0.6 * Math.max(...data.plugins.map((p) => p.name.length)))));
+  if (nameSize < 14) throw new Error(`${cols} plugin tiles do not fit one row; change the activity layout`);
   const tiles = data.plugins.map((p) => `<div class="tile"><span class="mono name">${esc(p.name)}</span><b class="display">${p.release ? esc(p.release.tag) : "&nbsp;"}</b><span class="mono when">${p.release ? esc(fmt(p.release.published_at)) : "no release yet"}</span></div>`).join("");
 
   return `${BASE(theme)}
@@ -117,9 +129,9 @@ h2{font-size:72px;line-height:1;margin-top:14px}
 .stat{display:grid;grid-template-columns:36px 1fr;column-gap:14px;align-items:center;color:var(--muted-foreground)}
 .stat b{font-size:68px;line-height:1;color:var(--foreground);grid-column:2;grid-row:1}
 .stat .eyebrow{grid-column:1/3;font-size:20px;margin-top:6px}
-.tiles{position:absolute;left:72px;right:72px;bottom:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.tile{border:2px solid var(--border);border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;gap:6px;background:var(--${theme === "light" ? "ink-0" : "ink-900"})}
-.tile .name{font-size:20px;font-weight:500} .tile b{font-size:56px;line-height:1.05;color:var(--foreground)}
+.tiles{position:absolute;left:72px;right:72px;bottom:56px;display:grid;grid-template-columns:repeat(${cols},1fr);gap:20px}
+.tile{border:2px solid var(--border);border-radius:18px;padding:22px ${TILE_PAD}px;display:flex;flex-direction:column;gap:6px;background:var(--${theme === "light" ? "ink-0" : "ink-900"})}
+.tile .name{font-size:${nameSize}px;font-weight:500;white-space:nowrap} .tile b{font-size:56px;line-height:1.05;color:var(--foreground)}
 .tile .when{font-size:20px;color:var(--muted-foreground)}
 </style>
 <div class="head"><span class="eyebrow">Activity</span><h2 class="display">Shipping in the open</h2></div>
