@@ -12,7 +12,7 @@ const css = readFileSync(join(root, "packages/tokens/theme.css"), "utf8");
 
 // Token names used by render.mjs. Anything missing makes this script fail.
 const NAMES = [
-  "ink-0", "ink-50", "ink-900",
+  "ink-0", "ink-50", "ink-700", "ink-900",
   "fn-mint-200", "fn-mint-300", "fn-mint-400", "fn-mint-500", "fn-mint-600", "fn-mint-700", "fn-mint-800", "fn-mint-900",
   "background", "foreground", "muted", "muted-foreground", "border",
   "fn-teal-300", "fn-violet-400", "fn-violet-600",

@@ -1,7 +1,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
   <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.png">
-  <img src="assets/banner-light.png" alt="FINOLABS. Your avatar, at work in the Agentic Universe. Finos, the AI avatar of finolabs.io, at the centre of an orbit of FINOLABS plugins and the hosts they run in: Claude Code, Codex, Google Antigravity and Claude Cowork." width="1280">
+  <img src="assets/banner-light.png" alt="FINOLABS. Your avatar, at work in the Agentic Universe. Finos, the AI avatar of finolabs.io, at the centre of an orbit of FINOLABS plugins: Vibecode, vibebiz, Vietnamizer and Markmap Skills." width="1280">
 </picture>
 
 FINOLABS builds Agent Skills, CLIs and plugins that make AI agents useful for real work, for Claude Code, Codex, Google Antigravity and Claude Cowork. Everything below is MIT except vibebiz, which is source-available.
