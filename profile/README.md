@@ -63,4 +63,4 @@ Figures come from the GitHub API and the catalog, regenerated weekly. [How the i
 
 ## About
 
-FINOLABS also sponsors ventures from fashion and retail to lifestyle.
+FINOLABS also works alongside ventures from fashion and retail to lifestyle.
