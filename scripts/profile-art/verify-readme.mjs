@@ -11,7 +11,7 @@ const start = lines.indexOf("| Plugin | Description |");
 if (start < 0) throw new Error("Plugin table not found in README");
 const rows = [];
 for (let i = start + 2; i < lines.length && lines[i].startsWith("|"); i++) rows.push(lines[i]);
-const expected = plugins.map((p) => `| [${p.repo}](https://github.com/finolabs/${p.repo}) | ${p.description} |`);
+const expected = plugins.map((p) => `| [\`${p.repo}\`](https://github.com/finolabs/${p.repo}) | ${p.description} |`);
 if (rows.length !== expected.length || rows.some((r, i) => r !== expected[i])) {
   console.error("README plugin table differs from the catalog.\nREADME:\n" + rows.join("\n") + "\nCatalog:\n" + expected.join("\n"));
   process.exit(1);
