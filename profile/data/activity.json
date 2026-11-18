@@ -67,6 +67,15 @@
   "releases": 63,
   "plugins": [
     {
+      "name": "vibebiz",
+      "repo": "vibebiz",
+      "description": "A product owner for founders and business leaders: turns a vague idea for a system, an AI use or an automation into a clear, challenged, measurable PRD.",
+      "release": {
+        "tag": "v0.1.8",
+        "published_at": "2026-11-18"
+      }
+    },
+    {
       "name": "finolabs-vibecode",
       "repo": "vibecode",
       "description": "24 skills and 3 agents (reviewer, security-reviewer, navigator) for review routing, verification, setup, run hygiene and quota on demand.",
@@ -91,15 +100,6 @@
       "release": {
         "tag": "v0.2.0",
         "published_at": "2026-11-03"
-      }
-    },
-    {
-      "name": "vibebiz",
-      "repo": "vibebiz",
-      "description": "A product owner for founders and business leaders: turns a vague idea for a system, an AI use or an automation into a clear, challenged, measurable PRD.",
-      "release": {
-        "tag": "v0.1.8",
-        "published_at": "2026-11-18"
       }
     }
   ]
