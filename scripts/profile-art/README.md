@@ -9,7 +9,7 @@ Generates the images on the organization profile (`profile/README.md`).
 
 ## Data
 
-`fetch-activity.mjs` reads, through the `gh` CLI, for every public, non-archived, non-fork repository of the organization: default-branch commits (deduplicated by SHA, counted per UTC author day over 17 weeks) and releases published inside the same window. Plugin names, descriptions and repositories come from `finolabs/plugins` (`.claude-plugin/marketplace.json`); versions and dates from each repository's latest release. Nothing else is shown, and nothing is estimated.
+`fetch-activity.mjs` reads, through the `gh` CLI, for every public, non-archived, non-fork repository of the organization: default-branch commits (deduplicated by SHA, counted per UTC author day over 17 weeks) and releases published inside the same window. Plugin names, descriptions and repositories come from `finolabs/plugins` (`.claude-plugin/marketplace.json`), minus the plugins listed in `NOT_ON_PROFILE` (agybird: public, but no longer promoted); versions and dates from each repository's latest release. Nothing else is shown, and nothing is estimated.
 
 Heatmap levels are the quartiles of the non-zero daily counts in the window, so the legend is relative to this window, not an absolute scale.
 
