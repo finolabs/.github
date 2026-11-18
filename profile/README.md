@@ -4,11 +4,13 @@
   <img src="assets/banner-light.png" alt="FINOLABS. AI-native. Tech-driven. Open source plugins for AI coding agents." width="1280">
 </picture>
 
-FINOLABS is an investment and technology company. Built on AI-native and tech-driven foundations, we sponsor business ventures from fashion and retail to lifestyle.
+FINOLABS builds Agent Skills, CLIs and plugins that make AI agents useful for real work, for Claude Code, Codex, Google Antigravity and Claude Cowork. Everything below is MIT except vibebiz, which is source-available.
 
-## Open source
+**[finolabs.io](https://finolabs.io)** · **[Plugin catalog](https://github.com/finolabs/plugins)** · **[Security policy](https://github.com/finolabs/.github/blob/main/SECURITY.md)**
 
-Plugins for AI coding agents. Every coding-agent plugin lives in one shared catalog, [`finolabs/plugins`](https://github.com/finolabs/plugins), so Claude Code and Codex need a single marketplace source. The [developer hub](https://finolabs.io) lists them with install commands.
+## Plugins
+
+Every plugin lives in its own repository and is listed in one shared catalog, [`finolabs/plugins`](https://github.com/finolabs/plugins), so Claude Code and Codex need a single marketplace source.
 
 | Plugin | Description |
 | --- | --- |
@@ -18,17 +20,9 @@ Plugins for AI coding agents. Every coding-agent plugin lives in one shared cata
 | [markmap-skills](https://github.com/finolabs/markmap-skills) | Turn notes and documents into editable Markdown and interactive Markmap mindmaps, for Claude Code, Codex and Antigravity. No background daemon. |
 | [vibebiz](https://github.com/finolabs/vibebiz) | A product owner for founders and business leaders: turns a vague idea for a system, an AI use or an automation into a clear, challenged, measurable PRD. |
 
-vibebiz is source-available, not MIT: free for noncommercial use under PolyForm Noncommercial 1.0.0, with a [commercial license](https://github.com/finolabs/vibebiz/blob/main/COMMERCIAL-LICENSE.md) for business use. In Claude Cowork, install it from its [latest release](https://github.com/finolabs/vibebiz/releases/latest) through Settings › Plugins › Upload plugin.
+finolabs-vibecode, agybird, vietnamizer and markmap-skills are MIT licensed. vibebiz is source-available, not open source: free for noncommercial use under PolyForm Noncommercial 1.0.0, with a [commercial license](https://github.com/finolabs/vibebiz/blob/main/COMMERCIAL-LICENSE.md) for business use.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.png">
-  <source media="(prefers-color-scheme: light)" srcset="assets/activity-light.png">
-  <img src="assets/activity-light.png" alt="Commit heatmap, release count and latest plugin versions for the public FINOLABS repositories, drawn from the GitHub API." width="1280">
-</picture>
-
-Figures come from the GitHub API and the catalog. [How the images are generated](https://github.com/finolabs/.github/blob/main/scripts/profile-art/README.md).
-
-## Install
+## Get started
 
 Claude Code:
 
@@ -44,10 +38,28 @@ codex plugin marketplace add finolabs/plugins
 codex plugin add finolabs-vibecode@finolabs
 ```
 
-Antigravity does not use a catalog. Install each plugin from its repository URL, for example `agy plugin install https://github.com/finolabs/vibecode`. Any other plugin installs the same way: change the plugin name in the Claude Code and Codex commands, and the repository URL in the Antigravity command. Details are in the [catalog README](https://github.com/finolabs/plugins#readme).
+Google Antigravity does not use a catalog. Install each plugin from its repository URL, for example `agy plugin install https://github.com/finolabs/vibecode`.
 
-## Contact
+Claude Cowork: download vibebiz from its [latest release](https://github.com/finolabs/vibebiz/releases/latest), then upload it in Settings › Plugins › Upload plugin.
 
-- Email: [finos@finolabs.io](mailto:finos@finolabs.io)
-- Security issues: see [SECURITY.md](https://github.com/finolabs/.github/blob/main/SECURITY.md)
-- License: finolabs-vibecode, agybird, vietnamizer and markmap-skills are MIT licensed; vibebiz is source-available (see above).
+For another plugin, change the plugin name in the commands or the repository URL. Details are in the [catalog README](https://github.com/finolabs/plugins#readme).
+
+## Activity
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="assets/activity-light.png">
+  <img src="assets/activity-light.png" alt="Commit heatmap, release count and latest plugin versions for the public FINOLABS repositories, drawn from the GitHub API." width="1280">
+</picture>
+
+Figures come from the GitHub API and the catalog, regenerated weekly. [How the images are generated](https://github.com/finolabs/.github/blob/main/scripts/profile-art/README.md).
+
+## Support
+
+- Bugs and feature requests: open an issue in the plugin's own repository.
+- Security issues: report privately as the [security policy](https://github.com/finolabs/.github/blob/main/SECURITY.md) describes, never in a public issue.
+- Business and licensing, including vibebiz commercial use: [finos@finolabs.io](mailto:finos@finolabs.io).
+
+## About
+
+FINOLABS is also an investment company, sponsoring ventures from fashion and retail to lifestyle.
