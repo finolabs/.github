@@ -4,7 +4,7 @@ Generates the images on the organization profile (`profile/README.md`).
 
 | Output | Source of the content |
 | --- | --- |
-| `profile/assets/banner-{light,dark}.png` | The finolabs.io hero copy (H1 and lead line), the wordmark and the Finos `idle` state from the FINOLABS design system (vendored in `vendor/`), the product icons from each repository's `assets/icon.svg`, and the host names as text chips. Finos always carries the fixed AI line. |
+| `profile/assets/banner-{light,dark}.png` | The finolabs.io hero copy (H1 and lead line), the wordmark and the Finos `idle` state from the FINOLABS design system (vendored in `vendor/`), and the product icons from each repository's `assets/icon.svg` with their names. Type sizes are the site hero's, scaled to the banner (see `render.mjs`). Finos is white with dark eyes in both themes, as on the site, and always carries the fixed AI line. |
 | `profile/assets/activity-{light,dark}.png` | `profile/data/activity.json`, written by `fetch-activity.mjs`. |
 
 ## Data
@@ -15,7 +15,7 @@ Heatmap levels are the quartiles of the non-zero daily counts in the window, so 
 
 ## Design
 
-`snapshot-tokens.mjs` copies the colour tokens used (light and dark) from the design system's `packages/tokens/theme.css` into `tokens.json`, with the source commit. `render.mjs` references tokens by name only. Fonts (Anton, Space Grotesk, JetBrains Mono) are vendored under SIL OFL 1.1 (`fonts/OFL-*.txt`, sources and checksums in `fonts/SOURCE.md`). Every value interpolated into the page is validated and HTML-escaped, and the page carries a Content-Security-Policy that blocks frames, scripts and network access. The mark and wordmark are FINOLABS brand assets.
+`snapshot-tokens.mjs` copies the colour tokens used (light and dark) from the design system's `packages/tokens/theme.css` into `tokens.json`, with the source commit. `render.mjs` references tokens by name only. Fonts (Anton, Space Grotesk, JetBrains Mono) are vendored under SIL OFL 1.1 (`fonts/OFL-*.txt`, sources and checksums in `fonts/SOURCE.md`). Every value interpolated into the page is validated and HTML-escaped, and the page carries a Content-Security-Policy that blocks frames, scripts and network access. The wordmark and Finos are FINOLABS brand assets.
 
 ## Run
 
