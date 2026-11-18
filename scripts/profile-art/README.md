@@ -4,7 +4,7 @@ Generates the images on the organization profile (`profile/README.md`).
 
 | Output | Source of the content |
 | --- | --- |
-| `profile/assets/banner-{light,dark}.png` | The finolabs.io hero copy (H1 and lead line), the wordmark and the Finos `idle` state from the FINOLABS design system (vendored in `vendor/`), and the product icons from each repository's `assets/icon.svg` with their names. Type sizes are the site hero's, scaled to the banner (see `render.mjs`). Finos is white with dark eyes in both themes, as on the site, and always carries the fixed AI line. |
+| `profile/assets/banner-{light,dark}.png` | The finolabs.io hero copy (H1 and lead line), the wordmark and the Finos `idle` state from the FINOLABS design system (vendored in `vendor/`), and the product icons from each repository's `assets/icon.svg`, labelled with the repository name in lowercase. Type sizes are the site hero's, scaled to the banner (see `render.mjs`). Finos is white with dark eyes in both themes, as on the site, and always carries the fixed AI line. |
 | `profile/assets/activity-{light,dark}.png` | `profile/data/activity.json`, written by `fetch-activity.mjs`. |
 
 ## Data
