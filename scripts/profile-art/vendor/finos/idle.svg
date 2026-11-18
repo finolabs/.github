@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" color="#0B0B17" role="img" aria-label="Finos: Chờ">
+<defs>
+<linearGradient id="finos-idle-flow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#87D3E1"/><stop offset="0.35" stop-color="#7FE2CE"/><stop offset="0.65" stop-color="#B49BD8"/><stop offset="1" stop-color="#9750C4"/></linearGradient>
+<linearGradient id="finos-idle-flow-line" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#347D93"/><stop offset="0.35" stop-color="#328874"/><stop offset="0.65" stop-color="#9750C4"/><stop offset="1" stop-color="#793CA5"/></linearGradient>
+<mask id="finos-idle-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="200" height="200"><rect width="200" height="200" fill="#fff"/>
+<path d="M82 114 a6 11 0 1 0 12 0 a6 11 0 1 0 -12 0 Z" fill="#000"/>
+<path d="M106 114 a6 11 0 1 0 12 0 a6 11 0 1 0 -12 0 Z" fill="#000"/>
+</mask>
+</defs>
+<path d="M100 57 C131 57 152 102 152 131 C152 159 129 176 100 176 C71 176 48 159 48 131 C48 102 69 57 100 57 Z" fill="#F7F7FB" transform="matrix(0.985 0 0 0.985 1.5 1.748)"/>
+<path d="M100 57 C131 57 152 102 152 131 C152 159 129 176 100 176 C71 176 48 159 48 131 C48 102 69 57 100 57 Z" fill="currentColor" mask="url(#finos-idle-mask)"/>
+<path d="M100 57 C131 57 152 102 152 131 C152 159 129 176 100 176 C71 176 48 159 48 131 C48 102 69 57 100 57 Z" transform="translate(100 26) rotate(0) scale(0.24 -0.24) translate(-100 -116.5)" fill="url(#finos-idle-flow)" stroke="url(#finos-idle-flow-line)" stroke-width="2.083" stroke-linejoin="round" paint-order="stroke"/>
+</svg>
