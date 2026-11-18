@@ -1,7 +1,7 @@
 {
-  "as_of": "2026-11-13",
+  "as_of": "2026-11-18",
   "window": {
-    "start": "2026-07-19",
+    "start": "2026-07-26",
     "weeks": 17,
     "timezone": "UTC"
   },
@@ -9,14 +9,14 @@
   "repos": [
     ".github",
     "agybird",
-    "finolabs-vibecode",
     "markmap-skills",
     "plugins",
     "vibebiz",
+    "vibecode",
     "vietnamizer"
   ],
   "commits": {
-    "total": 2135,
+    "total": 3080,
     "days": {
       "2026-07-29": 7,
       "2026-07-30": 7,
@@ -56,18 +56,23 @@
       "2026-11-10": 75,
       "2026-11-11": 138,
       "2026-11-12": 354,
-      "2026-11-13": 138
+      "2026-11-13": 288,
+      "2026-11-14": 261,
+      "2026-11-15": 184,
+      "2026-11-16": 88,
+      "2026-11-17": 252,
+      "2026-11-18": 10
     }
   },
-  "releases": 47,
+  "releases": 63,
   "plugins": [
     {
       "name": "finolabs-vibecode",
-      "repo": "finolabs-vibecode",
-      "description": "25 skills and 3 agents (fnl-reviewer, fnl-security-reviewer, fnl-navigator) for review routing, verification, setup, run hygiene and quota on demand.",
+      "repo": "vibecode",
+      "description": "24 skills and 3 agents (reviewer, security-reviewer, navigator) for review routing, verification, setup, run hygiene and quota on demand.",
       "release": {
-        "tag": "v0.2.5",
-        "published_at": "2026-11-13"
+        "tag": "v0.3.2",
+        "published_at": "2026-11-17"
       }
     },
     {
@@ -75,17 +80,17 @@
       "repo": "agybird",
       "description": "Delegate code work, image generation or editing, and general tasks to the official Google Antigravity CLI through an existing Gemini subscription.",
       "release": {
-        "tag": "v0.4.4",
-        "published_at": "2026-11-12"
+        "tag": "v0.4.5",
+        "published_at": "2026-11-14"
       }
     },
     {
       "name": "vietnamizer",
       "repo": "vietnamizer",
-      "description": "Biên tập bản nháp, bài viết, README và bản dịch tiếng Việt cho tự nhiên hơn, giữ nguyên ý, dữ kiện, thuật ngữ, code và giọng người viết.",
+      "description": "Viết và biên tập tiếng Việt tự nhiên hơn, giữ ý, dữ kiện, code và giọng người viết; hỏi “Vietnamizer làm được gì?” để xem tính năng và thiết lập giọng.",
       "release": {
-        "tag": "v0.14.0",
-        "published_at": "2026-11-13"
+        "tag": "v0.16.2",
+        "published_at": "2026-11-15"
       }
     },
     {
@@ -95,6 +100,15 @@
       "release": {
         "tag": "v0.2.0",
         "published_at": "2026-11-03"
+      }
+    },
+    {
+      "name": "vibebiz",
+      "repo": "vibebiz",
+      "description": "A product owner for founders and business leaders: turns a vague idea for a system, an AI use or an automation into a clear, challenged, measurable PRD.",
+      "release": {
+        "tag": "v0.1.8",
+        "published_at": "2026-11-18"
       }
     }
   ]
