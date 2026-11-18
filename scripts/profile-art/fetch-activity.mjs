@@ -54,8 +54,10 @@ for (const repo of repos) {
 }
 
 // Plugins come from the catalog; versions from each repo's latest release.
+// Catalog plugins the profile does not promote (still public and installable).
+const NOT_ON_PROFILE = new Set(["agybird"]);
 const catalog = JSON.parse(Buffer.from(json("api", `repos/${ORG}/plugins/contents/.claude-plugin/marketplace.json`).content, "base64").toString());
-const plugins = catalog.plugins.map((p) => {
+const plugins = catalog.plugins.filter((p) => !NOT_ON_PROFILE.has(p.name)).map((p) => {
   must(new RegExp(`^${ORG}/[\\w.-]+$`), p.source?.repo ?? "", "catalog source repo");
   const repo = p.source.repo.split("/")[1];
   must(NAME_RE, p.name, "plugin name");

@@ -16,7 +16,7 @@
     "vietnamizer"
   ],
   "commits": {
-    "total": 3080,
+    "total": 3086,
     "days": {
       "2026-07-29": 7,
       "2026-07-30": 7,
@@ -61,7 +61,7 @@
       "2026-11-15": 184,
       "2026-11-16": 88,
       "2026-11-17": 252,
-      "2026-11-18": 10
+      "2026-11-18": 16
     }
   },
   "releases": 63,
@@ -73,15 +73,6 @@
       "release": {
         "tag": "v0.3.2",
         "published_at": "2026-11-17"
-      }
-    },
-    {
-      "name": "agybird",
-      "repo": "agybird",
-      "description": "Delegate code work, image generation or editing, and general tasks to the official Google Antigravity CLI through an existing Gemini subscription.",
-      "release": {
-        "tag": "v0.4.5",
-        "published_at": "2026-11-14"
       }
     },
     {
