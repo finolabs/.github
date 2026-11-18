@@ -51,12 +51,13 @@ body{background:var(--surface);color:var(--foreground);font-family:"Space Grotes
 svg.icon{width:36px;height:36px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
 `;
 
-// Product icons from each repository's assets/icon.svg, with their names (agybird is not promoted).
+// Product icons from each repository's assets/icon.svg, labelled with the repository name in lowercase
+// (Fio, 18/11/2026; agybird is not promoted).
 const PRODUCTS = [
-  ["Vibecode", '<path d="M30 36 L10 64 L30 92 M98 36 L118 64 L98 92" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><rect x="36" y="54" width="20" height="20" rx="4" fill="currentColor"/><path d="M72 64 H92" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>'],
+  ["vibecode", '<path d="M30 36 L10 64 L30 92 M98 36 L118 64 L98 92" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><rect x="36" y="54" width="20" height="20" rx="4" fill="currentColor"/><path d="M72 64 H92" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>'],
   ["vibebiz", '<path d="M36 16 V100" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/><path d="M36 74 A28 28 0 1 1 64 102 H36" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M84 94 L104 112" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><circle cx="64" cy="74" r="6" fill="currentColor"/>'],
-  ["Vietnamizer", '<path d="M47 28 Q64 45 81 28" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><ellipse cx="61" cy="75" rx="23" ry="25" fill="none" stroke="currentColor" stroke-width="10"/><path d="M84 50 V100" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>'],
-  ["Markmap Skills", '<circle cx="40" cy="64" r="11" fill="none" stroke="currentColor" stroke-width="9"/><path d="M51 64 C72 64 72 34 100 34 M51 64 H100 M51 64 C72 64 72 94 100 94" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>'],
+  ["vietnamizer", '<path d="M47 28 Q64 45 81 28" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><ellipse cx="61" cy="75" rx="23" ry="25" fill="none" stroke="currentColor" stroke-width="10"/><path d="M84 50 V100" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>'],
+  ["markmap-skills", '<circle cx="40" cy="64" r="11" fill="none" stroke="currentColor" stroke-width="9"/><path d="M51 64 C72 64 72 34 100 34 M51 64 H100 M51 64 C72 64 72 94 100 94" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>'],
 ];
 
 // Banner copy and type follow the finolabs.io hero (16/11/2026), scaled from its 1440px design:
@@ -154,9 +155,9 @@ function activity(theme) {
   // (JetBrains Mono advances 0.6em), so every name fits on one line.
   const cols = data.plugins.length, TILE_PAD = 20;
   const nameRoom = (1280 - 2 * 72 - 20 * (cols - 1)) / cols - 2 * TILE_PAD - 4;
-  const nameSize = Math.min(20, Math.floor(nameRoom / (0.6 * Math.max(...data.plugins.map((p) => p.name.length)))));
+  const nameSize = Math.min(20, Math.floor(nameRoom / (0.6 * Math.max(...data.plugins.map((p) => p.repo.length)))));
   if (nameSize < 14) throw new Error(`${cols} plugin tiles do not fit one row; change the activity layout`);
-  const tiles = data.plugins.map((p) => `<div class="tile"><span class="mono name">${esc(p.name)}</span><b class="display">${p.release ? esc(p.release.tag) : "&nbsp;"}</b><span class="mono when">${p.release ? esc(fmt(p.release.published_at)) : "no release yet"}</span></div>`).join("");
+  const tiles = data.plugins.map((p) => `<div class="tile"><span class="mono name">${esc(p.repo)}</span><b class="display">${p.release ? esc(p.release.tag) : "&nbsp;"}</b><span class="mono when">${p.release ? esc(fmt(p.release.published_at)) : "no release yet"}</span></div>`).join("");
 
   return `${BASE(theme)}
 body{width:1280px;height:940px;position:relative}

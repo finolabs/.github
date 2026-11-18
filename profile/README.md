@@ -1,7 +1,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
   <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.png">
-  <img src="assets/banner-light.png" alt="FINOLABS. Your avatar, at work in the Agentic Universe. Finos, the AI avatar of finolabs.io, at the centre of an orbit of FINOLABS plugins: Vibecode, vibebiz, Vietnamizer and Markmap Skills." width="1280">
+  <img src="assets/banner-light.png" alt="FINOLABS. Your avatar, at work in the Agentic Universe. Finos, the AI avatar of finolabs.io, at the centre of an orbit of FINOLABS plugins: vibecode, vibebiz, vietnamizer and markmap-skills." width="1280">
 </picture>
 
 FINOLABS builds Agent Skills, CLIs and plugins that make AI agents useful for real work, for Claude Code, Codex, Google Antigravity and Claude Cowork. Everything below is MIT except vibebiz, which is source-available.
@@ -14,12 +14,12 @@ Every plugin lives in its own repository and is listed in one shared catalog, [`
 
 | Plugin | Description |
 | --- | --- |
-| [finolabs-vibecode](https://github.com/finolabs/vibecode) | 24 skills and 3 agents (reviewer, security-reviewer, navigator) for review routing, verification, setup, run hygiene and quota on demand. |
+| [vibecode](https://github.com/finolabs/vibecode) | 24 skills and 3 agents (reviewer, security-reviewer, navigator) for review routing, verification, setup, run hygiene and quota on demand. |
 | [vietnamizer](https://github.com/finolabs/vietnamizer) | Viết và biên tập tiếng Việt tự nhiên hơn, giữ ý, dữ kiện, code và giọng người viết; hỏi “Vietnamizer làm được gì?” để xem tính năng và thiết lập giọng. |
 | [markmap-skills](https://github.com/finolabs/markmap-skills) | Turn notes and documents into editable Markdown and interactive Markmap mindmaps, for Claude Code, Codex and Antigravity. No background daemon. |
 | [vibebiz](https://github.com/finolabs/vibebiz) | A product owner for founders and business leaders: turns a vague idea for a system, an AI use or an automation into a clear, challenged, measurable PRD. |
 
-finolabs-vibecode, vietnamizer and markmap-skills are MIT licensed. vibebiz is source-available, not open source: free for noncommercial use under PolyForm Noncommercial 1.0.0, with a [commercial license](https://github.com/finolabs/vibebiz/blob/main/COMMERCIAL-LICENSE.md) for business use.
+vibecode, vietnamizer and markmap-skills are MIT licensed. vibebiz is source-available, not open source: free for noncommercial use under PolyForm Noncommercial 1.0.0, with a [commercial license](https://github.com/finolabs/vibebiz/blob/main/COMMERCIAL-LICENSE.md) for business use.
 
 ## Get started
 
